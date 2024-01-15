@@ -182,10 +182,7 @@
                 var normalMatrix = getNormalMatrix(modelMatrix);
                 sunNode.trs.setRotation(0, 0, zRotation);
                 earthNode.trs.setRotation(0, 0, zRotation * 2);
-                /**
-                 *@task3 : add rotation to mars on z-axis.
-                    the rotation should be 1.5 * zRotation 
-                */
+                marsNode.trs.setRotation(0,0,zRotation *1.5);
 
                 sunNode.draw(mvp, modelViewMatrix, normalMatrix, modelMatrix);
                 requestAnimationFrame(renderLoop);

@@ -24,10 +24,6 @@ class SceneNode {
     }
 
     draw(mvp, modelView, normalMatrix, modelMatrix) {
-        /**
-         * @Task1 : Implement the draw function for the SceneNode class.
-         */
-        
         var transformedMvp = MatrixMult(mvp,this.trs.getTransformationMatrix());
         var transformedModelView = MatrixMult(modelView,this.trs.getTransformationMatrix())
         var transformedNormals = normalMatrix;
@@ -39,7 +35,7 @@ class SceneNode {
         }
 
         for (var i = 0; i < this.children.length; i++) {
-            this.children[i].draw(transformedMvp, transformedModelView, normalMatrix, modelMatrix);
+            this.children[i].draw(transformedMvp, transformedModelView, transformedNormals, transformedModel);
         }
     }
 
